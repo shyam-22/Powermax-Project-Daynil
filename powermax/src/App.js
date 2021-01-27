@@ -1,8 +1,9 @@
 import React from "react"
+import Routes from "./Routes";
 
 function App() {
   return (
-  <h2>Powermax Project</h2>
+    <Routes/>
   );
 }
 
