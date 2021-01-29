@@ -1,15 +1,16 @@
 import React, { Fragment } from 'react'
 import {Link,withRouter} from "react-router-dom"
 
-const Nav_Stock = ({isActive,props}) => {
+const Nav_Stock = () => {
+
     return (
         <Fragment>
-            <li className="nav-item">
-                <Link className="nav-link" data-toggle="dropdown" style={isActive(props.history,"#")}  to="#">
-                    Stock<span className="caret"></span>
-                </Link>
-                <ul className="dropdown-menu">
-                    <li className="nav-item">
+             <li className="nav-item">
+                <div>
+                    <div className="dropdown">
+                        <button className="dropbtn">Stock</button>
+                            <div className="dropdown-content">
+                            <li className="nav-item">
                         <Link to="/stock/item">Item Stock</Link>
                     </li>
                     <li className="nav-item">
@@ -24,8 +25,10 @@ const Nav_Stock = ({isActive,props}) => {
                     <li className="nav-item">
                         <Link to="/transfer">Transfer</Link>
                     </li>
-                </ul>
-                </li>
+                        </div>
+                 </div>
+            </div>
+            </li>
         </Fragment>
     )
 }

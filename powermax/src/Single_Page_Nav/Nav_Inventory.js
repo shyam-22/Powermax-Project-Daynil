@@ -1,30 +1,38 @@
 import React, { Fragment } from 'react'
 import {Link,withRouter} from "react-router-dom"
 
-const Nav_Inventory = ({isActive,props}) => {
+const Nav_Inventory = () => {
     return (
         <Fragment>
              <li className="nav-item">
-                <Link className="nav-link" data-toggle="dropdown" style={isActive(props.history,"#")} to="#">
-                    Inventory<span className="caret"></span>
-                </Link>
-                <ul className="dropdown-menu">
-                    <li>
-                        <Link to="/brands" className="nav-link">Brands</Link>
-                    </li>
-                    <li>
-                        <Link to="/products" className="nav-link">Products</Link>
-                    </li>
-                    <li>
-                        <Link to="/categories" className="nav-link">Categories</Link>
-                    </li>
-                    <li>
-                        <Link to="/items" className="nav-link">items</Link>
-                    </li>
-                </ul>
+                <div>
+                    <div className="dropdown">
+                        <button className="dropbtn">Inventory</button>
+                            <div className="dropdown-content">
+                            <li>
+                                <Link to="/brands">Brands</Link>
+                            </li>
+                            <li>
+                                <Link to="/products">Products</Link>
+                            </li>
+                            <li>
+                                <Link to="/categories">Categories</Link>
+                            </li>
+                            <li>
+                                <Link to="/items">items</Link>
+                            </li>
+                            <li>
+                                <Link to="/items">Pending Sr.No Items</Link>
+                            </li>
+                        </div>
+                 </div>
+            </div>
             </li>
         </Fragment>
     )
 }
 
 export default withRouter(Nav_Inventory) 
+
+
+
